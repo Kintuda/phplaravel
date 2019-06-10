@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('users')->insert([
+            'name' => Str::random(10),
+            'email' => Str::random(10).'@gmail.com',
+            'cpfcnpj' => '111111111',
+            'birthday' => gmdate('Y-m-d H:i:s'),
+            'phone' => '00030231032',
+        ]);
     }
 }
